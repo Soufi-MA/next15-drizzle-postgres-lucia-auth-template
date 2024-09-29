@@ -19,8 +19,8 @@ This project is an authentication template built with **Next.js 15**, **Lucia-au
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/auth-template.git
-   cd auth-template
+   git clone https://github.com/Soufi-MA/next15-drizzle-postgres-lucia-auth-template
+   cd next15-drizzle-postgres-lucia-auth-template
    ```
 
 2. Install dependencies:
