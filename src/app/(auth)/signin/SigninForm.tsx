@@ -1,6 +1,5 @@
 "use client";
 
-// import AuthWithEmail from "@/components/EmailAuthButton";
 import AuthWithGitHub from "@/components/GithubAuthButton";
 import AuthWithGoogle from "@/components/GoogleAuthButton";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import { useActionState, useEffect, useState } from "react";
 import { auth } from "../actions";
 import { useFormStatus } from "react-dom";
 import { Loader2, Mail } from "lucide-react";
+import Link from "next/link";
 
 interface StepProps {
   formData: {
@@ -43,8 +43,15 @@ export default function SigninForm() {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100svh-4rem)]">
-      <div className="bg-card p-6 rounded-lg border shadow-lg w-full max-w-md">
+      <div className="flex flex-col gap-4 bg-card p-6 rounded-lg border shadow-lg w-full max-w-md">
         <div className="space-y-4">{steps[currentStep]}</div>
+        <div className="w-full border-t"></div>
+        <p className="text-center">
+          Don&apos;t have an account?{" "}
+          <Link className="underline" href={"/signup"}>
+            Sign Up
+          </Link>
+        </p>
       </div>
     </div>
   );

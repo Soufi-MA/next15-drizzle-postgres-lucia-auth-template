@@ -10,6 +10,8 @@ import { z } from "zod";
 import { auth } from "../actions";
 import { useFormStatus } from "react-dom";
 import { Loader2, Mail } from "lucide-react";
+import { Separator } from "@radix-ui/react-dropdown-menu";
+import Link from "next/link";
 
 interface StepProps {
   formData: {
@@ -50,8 +52,15 @@ export default function SignupForm() {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100svh-4rem)]">
-      <div className="bg-card p-6 rounded-lg border shadow-lg w-full max-w-md">
+      <div className="flex flex-col gap-4 bg-card p-6 rounded-lg border shadow-lg w-full max-w-md">
         <div className="space-y-4">{steps[currentStep]}</div>
+        <div className="w-full border-t"></div>
+        <p className="text-center">
+          Already have an account?{" "}
+          <Link className="underline" href={"/signin"}>
+            Sign In
+          </Link>
+        </p>
       </div>
     </div>
   );
